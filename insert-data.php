@@ -33,6 +33,11 @@
 </body>
 
 <?php
+// Enable detailed error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $servername = "localhost";
 $username = "d20221101856";
 $password = "Aa151k027!!";
