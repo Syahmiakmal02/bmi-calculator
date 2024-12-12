@@ -40,22 +40,25 @@ $dbname = "d20221101856";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
+
 // Check connection
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
+echo "Connected successfully<br>";
 
 $sql = "INSERT INTO bmi_calculator (name, height, weight, gender)
 VALUES ('Akmal', 171.1, 70.2, 'male')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
+    echo "New record created successfully";
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $conn->error;
 }
 
 $conn->close();
 ?>
+
 
 <script src="script.js"></script>
 
