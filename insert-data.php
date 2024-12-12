@@ -38,6 +38,7 @@
 $servername = "localhost";
 $username = "d20221101856";
 $password = "Aa151k027!!";
+$dbname = "d20221101856";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -47,7 +48,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO bmi_calculator (name, height, weight, gender)
-VALUES ('Akmal', 171, 70, male)";
+VALUES ('Akmal', 171, 70, 'male')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
