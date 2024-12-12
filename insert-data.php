@@ -15,17 +15,15 @@
 <body>
 
     <form id="bmiForm" onsubmit="calculateBMI(event)">
-        <label for="nama">Nama:</label> <br>
-        <input type="text" name="nama" id="nama" required> <br>
-        <label for="umur">Umur:</label> <br>
-        <input type="number" name="umur" id="umur" required> <br>
-        <label for="berat">Berat (kg):</label> <br>
-        <input type="number" name="berat" id="berat" required> <br>
-        <label for="tinggi">tinggi (cm):</label> <br>
-        <input type="number" name="tinggi" id="tinggi" required> <br>
-        <label for="jantina">jantina:</label> <br>
-        <input type="radio" name="jantina" id="jantina_lelaki" value="lelaki" required> Lelaki <br>
-        <input type="radio" name="jantina" id="jantina_perempuan" value="perempuan" required> Perempuan <br><br>
+        <label for="name">Nama:</label> <br>
+        <input type="text" name="name" id="name" required> <br>
+        <label for="height">height (cm):</label> <br>
+        <input type="number" name="height" id="height" required> <br>
+        <label for="weight">weight (kg):</label> <br>
+        <input type="number" name="weight" id="weight" required> <br>
+        <label for="gender">gender:</label> <br>
+        <input type="radio" name="gender" id="gender_male" value="male" required> male <br>
+        <input type="radio" name="gender" id="gender_female" value="female" required> female <br><br>
 
         <input type="submit" value="Submit">
     </form>
@@ -48,7 +46,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO bmi_calculator (name, height, weight, gender)
-VALUES ('Akmal', 171, 70, 'male')";
+VALUES ('Akmal', 171.1, 70.2, 'male')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
