@@ -14,7 +14,7 @@
 
 <body>
 
-    <form id="bmiForm" onsubmit="calculateBMI(event)">
+    <form id="bmiForm" action="insert-data-form.php" method="POST" onsubmit="calculateBMI(event)">
         <label for="name">Nama:</label> <br>
         <input type="text" name="name" id="name" required> <br>
         <label for="height">height (cm):</label> <br>
@@ -38,6 +38,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+$message = '';
+
 $servername = "localhost";
 $username = "d20221101856";
 $password = "Aa151k027!!";
@@ -52,8 +54,14 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully<br>";
 
+// Get form data
+$name = $_POST['name'];
+$height = $_POST['height'];
+$weight = $_POST['weight'];
+$gender = $_POST['gender'];
+
 $sql = "INSERT INTO bmi_calculator (name, height, weight, gender)
-VALUES ('shamer', 174.1, 74.2, 'male')";
+         VALUES ('$name', $height, $weight, '$gender')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
