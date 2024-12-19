@@ -56,7 +56,7 @@ if ($conn->connect_error) {
 echo "Connected successfully<br>";
 
 $sql = "INSERT INTO bmi_calculator (name, height, weight, gender)
-VALUES ($name, $height, $weight, $gender)";
+VALUES ('$name', $height, $weight, '$gender')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
